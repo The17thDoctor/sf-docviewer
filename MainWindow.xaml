@@ -1,0 +1,26 @@
+﻿<Window x:Name="Main" x:Class="Starfall_Documentation_Viewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Starfall_Documentation_Viewer"
+        mc:Ignorable="d"
+        Title="Starfall Documentation" Height="600" Width="1000" MinWidth="1000" MinHeight="600" Background="#FF2E2E2E" Icon="/icon.png">
+    <Grid x:Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TreeView x:Name="MainTreeView" Margin="5,5,2,5" Background="#FF232323" BorderBrush="{x:Null}"/>
+        <Label x:Name="WarningLabel" Content="Unable to download newer documentation" HorizontalAlignment="Stretch" Margin="5,0,2.5,5" VerticalAlignment="Bottom" Width="253" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="#FFF30000" FontWeight="Bold" FontSize="11" IsEnabled="False" Visibility="Hidden"/>
+        <ScrollViewer Grid.Column="1" Margin="2.5,5,5,5" Background="#FF232323">
+            <StackPanel x:Name="DocumentationPage"/>
+        </ScrollViewer>
+        <TextBlock HorizontalAlignment="Left" Height="1" Margin="-67,-57,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="3"/>
+    </Grid>
+    <Window.Resources>
+        <Style TargetType="{x:Type TreeViewItem}">
+            <EventSetter Event="GotFocus" Handler="TVISelected"/>
+        </Style>
+    </Window.Resources>
+</Window>

@@ -1,0 +1,13 @@
+﻿[*.cs]
+
+# CS8600: Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
+dotnet_diagnostic.CS8600.severity = silent
+
+# CS8602: Déréférencement d'une éventuelle référence null.
+dotnet_diagnostic.CS8602.severity = none
+
+# CS8604: Existence possible d'un argument de référence null.
+dotnet_diagnostic.CS8604.severity = none
+
+# CS8601: Existence possible d'une assignation de référence null.
+dotnet_diagnostic.CS8601.severity = none
